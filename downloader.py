@@ -6,10 +6,9 @@ from requests import session
 
 def main():
     s = session()
-    # Loop through billboard singles and albums
     for chart_type in ["D", "E"]:
-        print("Scraping Chart ", chart_type)
-        request_path = "http://www.umdmusic.com/default.asp?Lang=English&Chart=D"
+        print("Scraping Chart " + chart_type)
+        request_path = "http://www.umdmusic.com/default.asp?Lang=English&Chart=" + chart_type
         out_file = "us_billboard.psv"
         with open(out_file, 'a') as f:
             while True:
